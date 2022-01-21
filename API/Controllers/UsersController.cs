@@ -8,9 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+    
+    public class UsersController : BaseAPIController
     {
         private readonly DataContext _cntx;
         public UsersController(DataContext cntx)
