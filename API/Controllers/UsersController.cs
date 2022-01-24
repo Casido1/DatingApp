@@ -4,13 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+    
+    public class UsersController : BaseAPIController
     {
         private readonly DataContext _cntx;
         public UsersController(DataContext cntx)
@@ -19,6 +19,7 @@ namespace API.Controllers
             
         }
 
+        [AllowAnonymous]
         [HttpGet("")]
         public ActionResult<IEnumerable<AppUser>> GetUsers()
         {
@@ -26,6 +27,7 @@ namespace API.Controllers
             return users;
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public ActionResult<AppUser> GetUsers([FromRoute] int id)
         {
