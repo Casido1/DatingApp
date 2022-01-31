@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 using API.Data;
 using API.Interfaces;
 using API.Sevices;
-<<<<<<< HEAD
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-=======
->>>>>>> 3177331ec521a1852e9fc4fa8d69a81eeefdb096
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -53,7 +50,6 @@ namespace API
             });
 
             services.AddCors();
-<<<<<<< HEAD
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                   .AddJwtBearer(options => {
                       options.TokenValidationParameters = new TokenValidationParameters
@@ -65,8 +61,6 @@ namespace API
 
                       };
                   });
-=======
->>>>>>> 3177331ec521a1852e9fc4fa8d69a81eeefdb096
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

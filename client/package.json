@@ -39,4 +39,8 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.3.5"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3177331ec521a1852e9fc4fa8d69a81eeefdb096

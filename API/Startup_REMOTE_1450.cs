@@ -1,15 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using API.Data;
 using API.Interfaces;
 using API.Sevices;
-<<<<<<< HEAD
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-=======
->>>>>>> 3177331ec521a1852e9fc4fa8d69a81eeefdb096
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -19,7 +14,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 namespace API
@@ -53,20 +47,6 @@ namespace API
             });
 
             services.AddCors();
-<<<<<<< HEAD
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                  .AddJwtBearer(options => {
-                      options.TokenValidationParameters = new TokenValidationParameters
-                      {
-                          ValidateIssuerSigningKey = true,
-                          IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["TokenKey"])),
-                          ValidateIssuer = false,
-                          ValidateAudience = false
-
-                      };
-                  });
-=======
->>>>>>> 3177331ec521a1852e9fc4fa8d69a81eeefdb096
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -84,7 +64,6 @@ namespace API
             app.UseRouting();
             app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
 
-            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
